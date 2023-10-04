@@ -260,7 +260,7 @@ void Bruite(char** argv)
 			int _randHeight = rand()%((j+1)*_sizeBlock);
 
 			unsigned char _randBitMask = 1 << rand()%(sizeof(unsigned char)*8);
-			imIn[_randWidth][_randHeight] = _randBitMask;
+			imIn[_randWidth][_randHeight] ^= _randBitMask;
 		}
 
 	imIn.save(_pathOut);
